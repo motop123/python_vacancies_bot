@@ -1,4 +1,6 @@
-import requests, time, json
+import requests
+import time
+import json
 
 def get_page(page = 0):
     params = {
