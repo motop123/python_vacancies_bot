@@ -3,7 +3,7 @@ import telebot
 from telebot import types # для указание типов
 
 from hh_parcing import parce_data
-from handle_data import handle_vacancoes
+from handle_data import handle_vacancies
 bot = telebot.TeleBot(config.token)
 
 #----------------------------------------------------------------------------
@@ -21,7 +21,7 @@ def click_send_button(message):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         bot.send_message(message.chat.id, text="{0.first_name}, удачи в твоих поисках!".format(message.from_user), reply_markup=markup)
         raw_data = parce_data()
-        data = handle_vacancoes(raw_data)
+        data = handle_vacancies(raw_data)
         for text in data[:5]:
             bot.send_message(message.chat.id, text)
 
