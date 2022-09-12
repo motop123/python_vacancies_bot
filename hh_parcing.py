@@ -1,7 +1,7 @@
 import requests
 import time
 import json
-
+import numpy as np
 def get_page(page = 0):
     params = {
         'text': 'python',  # Текст фильтра. В имени должно быть слово "Аналитик"
@@ -17,12 +17,12 @@ def get_page(page = 0):
 
 def parce_data():
     lst_Obj = []
-
     for i in range(11):
         json_data = get_page(i)
         jsObj = json.loads(json_data)
         lst_Obj.extend(jsObj['items'])
         time.sleep(0.25)
     return lst_Obj
+
 
 

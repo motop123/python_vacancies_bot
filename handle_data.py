@@ -5,5 +5,6 @@ def handle_vacancies(data):
             f"Вакансия {item['name']}\n " \
             f"{item['published_at']}\n" \
             f"{item['alternate_url']}"
+
         lst.append(s)
     return lst
